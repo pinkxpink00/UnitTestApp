@@ -6,14 +6,15 @@ namespace UnitTestApp.Controllers
 {
     public class HomeController : Controller
     {
-        
+        IRepository repo;
 
+        public HomeController(IRepository r)
+        {
+            repo = r;
+        }
         public IActionResult Index()
         {
-            ViewData["Message"] = "Hello world!";
-            return View("Index");
+            return View(repo.GetAll());
         }
-
-     
     }
 }

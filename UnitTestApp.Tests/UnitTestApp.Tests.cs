@@ -1,44 +1,39 @@
 using Microsoft.AspNetCore.Mvc;
 using UnitTestApp.Controllers;
 using Xunit;
+using Moq;
+using UnitTestApp.Models;
 
 namespace UnitTestApp.Tests
 {
     public class HomeControllerTests
     {
         [Fact]
-        public void IndexViewDataMessage()
+        public void IndexReturnsAViewResultWithAListUser()
         {
-            // Arrange
-            HomeController controller = new HomeController();
+            //Arrange
+            var mock = new Mock<IRepository>();
+            mock.Setup(repo => repo.GetAll()).Returns(GetTestUsers());
+            var controller = new HomeController(mock.Object);
 
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
+            //Act
+            var result = controller.Index();
 
-            // Assert
-            Assert.Equal("Hello world!", result?.ViewData["Message"]);
+            //Assert
+            var viewResult = Assert.IsType<ViewResult>(result);
+            var model = Assert.IsAssignableFrom<IEnumerable<User>>(viewResult.Model);
+            Assert.Equal(GetTestUsers().Count, model.Count());
         }
-
-        [Fact]
-        public void IndexViewResultNotNull()
+        private List<User> GetTestUsers()
         {
-            // Arrange
-            HomeController controller = new HomeController();
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-            // Assert
-            Assert.NotNull(result);
-        }
-
-        [Fact]
-        public void IndexViewNameEqualIndex()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-            // Act
-            ViewResult result = controller.Index() as ViewResult;
-            // Assert
-            Assert.Equal("Index", result?.ViewName);
+            var users = new List<User>
+            {
+                new User { Id=1, Name="Tom", Age=35},
+                new User { Id=2, Name="Alice", Age=29},
+                new User { Id=3, Name="Sam", Age=32},
+                new User { Id=4, Name="Kate", Age=30}
+            };
+            return users;
         }
     }
 }
