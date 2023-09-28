@@ -11,8 +11,7 @@
           "lib/netcoreapp3.1/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {}
         },
         "build": {
-          "build/netstandard2.0/Microsoft.CodeCoverage.props": {},
-          "build/netstandard2.0/Microsoft.CodeCoverage.targets": {}
+          "build/netstandard2.0/_._": {}
         }
       },
       "Microsoft.NET.Test.Sdk/17.7.2": {
@@ -28,11 +27,10 @@
           "lib/netcoreapp3.1/_._": {}
         },
         "build": {
-          "build/netcoreapp3.1/Microsoft.NET.Test.Sdk.props": {},
-          "build/netcoreapp3.1/Microsoft.NET.Test.Sdk.targets": {}
+          "build/netcoreapp3.1/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/Microsoft.NET.Test.Sdk.props": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.0": {
@@ -300,7 +298,7 @@
           }
         },
         "build": {
-          "build/netcoreapp3.1/Microsoft.TestPlatform.TestHost.props": {}
+          "build/netcoreapp3.1/_._": {}
         }
       },
       "Microsoft.Win32.Primitives/4.3.0": {
@@ -1649,12 +1647,10 @@
           "xunit.extensibility.execution": "[2.5.1]"
         },
         "build": {
-          "build/xunit.core.props": {},
-          "build/xunit.core.targets": {}
+          "build/_._": {}
         },
         "buildMultiTargeting": {
-          "buildMultiTargeting/xunit.core.props": {},
-          "buildMultiTargeting/xunit.core.targets": {}
+          "buildMultiTargeting/_._": {}
         }
       },
       "xunit.extensibility.core/2.5.1": {
@@ -1691,17 +1687,22 @@
           }
         }
       },
-      "xunit.runner.visualstudio/2.5.1": {
-        "type": "package",
+      "UnitTestApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.NET.Test.Sdk": "17.7.2",
+          "xunit": "2.5.1"
+        },
         "compile": {
-          "lib/net6.0/_._": {}
+          "bin/placeholder/UnitTestApp.dll": {}
         },
         "runtime": {
-          "lib/net6.0/_._": {}
+          "bin/placeholder/UnitTestApp.dll": {}
         },
-        "build": {
-          "build/net6.0/xunit.runner.visualstudio.props": {}
-        }
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -5414,33 +5415,15 @@
         "xunit.extensibility.execution.nuspec"
       ]
     },
-    "xunit.runner.visualstudio/2.5.1": {
-      "sha512": "W5dQj2tysIY6MHaidZyqyiR7MGFEk+FrvHRapFyhe11HuR4A6aFGSVi8txi+kkXdY9FDjXffU/1PkNzRX52Caw==",
-      "type": "package",
-      "path": "xunit.runner.visualstudio/2.5.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "_content/README.md",
-        "_content/logo-128-transparent.png",
-        "build/net462/xunit.abstractions.dll",
-        "build/net462/xunit.runner.visualstudio.props",
-        "build/net462/xunit.runner.visualstudio.testadapter.dll",
-        "build/net6.0/xunit.abstractions.dll",
-        "build/net6.0/xunit.runner.visualstudio.dotnetcore.testadapter.dll",
-        "build/net6.0/xunit.runner.visualstudio.props",
-        "lib/net462/_._",
-        "lib/net6.0/_._",
-        "xunit.runner.visualstudio.2.5.1.nupkg.sha512",
-        "xunit.runner.visualstudio.nuspec"
-      ]
+    "UnitTestApp/1.0.0": {
+      "type": "project",
+      "path": "../UnitTestApp.csproj",
+      "msbuildProject": "../UnitTestApp.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Microsoft.NET.Test.Sdk >= 17.7.2",
-      "xunit >= 2.5.1",
-      "xunit.runner.visualstudio >= 2.5.1"
+      "UnitTestApp >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -5450,11 +5433,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.csproj",
-      "projectName": "UnitTestApp",
-      "projectPath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.csproj",
+      "projectUniqueName": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.Tests\\UnitTestApp.Tests.csproj",
+      "projectName": "UnitTestApp.Tests",
+      "projectPath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.Tests\\UnitTestApp.Tests.csproj",
       "packagesPath": "C:\\Users\\kyper\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\obj\\",
+      "outputPath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5474,7 +5457,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.csproj": {
+              "projectPath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5486,22 +5473,6 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
-        "dependencies": {
-          "Microsoft.NET.Test.Sdk": {
-            "target": "Package",
-            "version": "[17.7.2, )"
-          },
-          "xunit": {
-            "target": "Package",
-            "version": "[2.5.1, )"
-          },
-          "xunit.runner.visualstudio": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[2.5.1, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
@@ -5514,9 +5485,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

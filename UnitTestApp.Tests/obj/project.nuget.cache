@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jQghh3mcGvYHFamx54EK+dbyTQNWfHwi2Ju/5qXClnsWdCsYwz21iZdXyaqvdSxgJjLooCDmzjIIS/IuqlAvAw==",
+  "dgSpecHash": "0SFqY6Ga8hgJk80gHIwN93q4GN9Qtrpm98+8xSlJwCuUfg3bjojAE7KzIDTMgUERRuimp1e6suq2ITQ+LPNw4A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.csproj",
+  "projectFilePath": "C:\\Users\\kyper\\source\\repos\\UnitTestApp\\UnitTestApp.Tests\\UnitTestApp.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kyper\\.nuget\\packages\\microsoft.codecoverage\\17.7.2\\microsoft.codecoverage.17.7.2.nupkg.sha512",
     "C:\\Users\\kyper\\.nuget\\packages\\microsoft.net.test.sdk\\17.7.2\\microsoft.net.test.sdk.17.7.2.nupkg.sha512",
@@ -90,8 +90,7 @@
     "C:\\Users\\kyper\\.nuget\\packages\\xunit.assert\\2.5.1\\xunit.assert.2.5.1.nupkg.sha512",
     "C:\\Users\\kyper\\.nuget\\packages\\xunit.core\\2.5.1\\xunit.core.2.5.1.nupkg.sha512",
     "C:\\Users\\kyper\\.nuget\\packages\\xunit.extensibility.core\\2.5.1\\xunit.extensibility.core.2.5.1.nupkg.sha512",
-    "C:\\Users\\kyper\\.nuget\\packages\\xunit.extensibility.execution\\2.5.1\\xunit.extensibility.execution.2.5.1.nupkg.sha512",
-    "C:\\Users\\kyper\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.1\\xunit.runner.visualstudio.2.5.1.nupkg.sha512"
+    "C:\\Users\\kyper\\.nuget\\packages\\xunit.extensibility.execution\\2.5.1\\xunit.extensibility.execution.2.5.1.nupkg.sha512"
   ],
   "logs": []
 }
